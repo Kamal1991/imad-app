@@ -6,15 +6,15 @@ var app = express();
 app.use(morgan('combined'));
 
 app.get('/kamal-1', function (req, res) {
-  res.send('Kamal -1 is requsted');
+  res.sendFile(path.join(__dirname, 'ui', 'kamal-1.html'));
 });
 
 app.get('/kamal-2', function (req, res) {
-  res.send('Kamal -2 is requsted');
+  res.sendFile(path.join(__dirname, 'ui', 'kamal-2.html'));
 });
 
 app.get('/kamal-3', function (req, res) {
-  res.send('Kamal -3 is requsted');
+  res.sendFile(path.join(__dirname, 'ui', 'kamal-3.html'));
 });
 
 app.get('/', function (req, res) {
