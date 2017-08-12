@@ -72,13 +72,6 @@ app.get('/:contentname', function (req, res) {
     res.send(createTemplate(contents[contentname]));
 });
 
-app.get('/kamal-2', function (req, res) {
-  res.sendFile(path.join(__dirname, 'ui', 'kamal-2.html'));
-});
-
-app.get('/kamal-3', function (req, res) {
-  res.sendFile(path.join(__dirname, 'ui', 'kamal-3.html'));
-});
 
 app.get('/', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'index.html'));
