@@ -5,8 +5,49 @@ var path = require('path');
 var app = express();
 app.use(morgan('combined'));
 
+var content1={
+    title:'kamal-1 | Kamal Hot',
+    heading : 'Article one',
+    date: 'Aug 12,2017',
+    content:`            
+    <p> COntent of kamal-1. COntent of kamal-1.  COntent of kamal-1.  COntent of kamal-1.  COntent of kamal-1.  COntent of kamal-1.  COntent of kamal-1.  COntent of kamal-1.  COntent of kamal-1.  COntent of kamal-1.  COntent of kamal-1.  COntent of kamal-1.  COntent of kamal-1.  COntent of kamal-1.  COntent of kamal-1. vvvvvvvv COntent of kamal-1.  COntent of kamal-1.            
+    </p>
+    <p> COntent of kamal-1.  COntent of kamal-1.  COntent of kamal-1.  COntent of kamal-1.  COntent of kamal-1.  COntent of kamal-1.  COntent of kamal-1.  COntent of kamal-1.  COntent of kamal-1.  COntent of kamal-1.  COntent of kamal-1.  COntent of kamal-1.  COntent of kamal-1.  COntent of kamal-1.  COntent of kamal-1.  COntent of kamal-1.  COntent of kamal-1.  COntent of kamal-1.  COntent of kamal-1.  COntent of kamal-1. 
+    </p>`
+};
+function createTemplate(data)
+{
+var title=data.title;
+var date=data.date;
+var content=data.content;
+var HTMLTemplate=
+`
+<html>
+    <head>
+        <title>
+            ${title}
+        </title>
+        <meta name="viewport" content="width=device-width, initial-scale=1"/>
+        
+    </head>
+    <body>
+        <div><a href='/'>Home</a></div>
+        <hr/>
+        <div>
+            ${date}
+        </div>
+        <div>
+ ${content}
+        </div>
+    </body>
+</html>
+`;
+return htmlTemplate;
+}
+
+
 app.get('/kamal-1', function (req, res) {
-  res.sendFile(path.join(__dirname, 'ui', 'kamal-1.html'));
+  res.send(createTemplate(content1));
 });
 
 app.get('/kamal-2', function (req, res) {
