@@ -42,7 +42,7 @@ var HTMLTemplate=
     </body>
 </html>
 `;
-return htmlTemplate;
+return HTMLTemplate;
 }
 
 
