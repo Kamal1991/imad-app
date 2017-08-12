@@ -33,10 +33,10 @@ var HTMLTemplate=
     <body>
         <div><a href='/'>Home</a></div>
         <hr/>
-        <div>
+        <div >
             ${date}
         </div>
-        <div>
+        <div class="container">
  ${content}
         </div>
     </body>
