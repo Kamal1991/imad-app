@@ -4,8 +4,8 @@ var path = require('path');
 
 var app = express();
 app.use(morgan('combined'));
-
-var content1={
+var contents={
+    'kamal-1':{
     title:'kamal-1 | Kamal Hot',
     heading : 'Article one',
     date: 'Aug 12,2017',
@@ -14,6 +14,25 @@ var content1={
     </p>
     <p> COntent of kamal-1.  COntent of kamal-1.  COntent of kamal-1.  COntent of kamal-1.  COntent of kamal-1.  COntent of kamal-1.  COntent of kamal-1.  COntent of kamal-1.  COntent of kamal-1.  COntent of kamal-1.  COntent of kamal-1.  COntent of kamal-1.  COntent of kamal-1.  COntent of kamal-1.  COntent of kamal-1.  COntent of kamal-1.  COntent of kamal-1.  COntent of kamal-1.  COntent of kamal-1.  COntent of kamal-1. 
     </p>`
+},
+    'kamal-2':{
+    title:'kamal-2 | Kamal Hot',
+    heading : 'Article one',
+    date: 'Aug 15,2017',
+    content:`            
+    <p> COntent of kamal-2. COntent of kamal-1.  COntent of kamal-1.  COntent of kamal-1.  COntent of kamal-1.  COntent of kamal-1.  COntent of kamal-1.  COntent of kamal-1.  COntent of kamal-1.  COntent of kamal-1.  COntent of kamal-1.  COntent of kamal-1.  COntent of kamal-1.  COntent of kamal-1.  COntent of kamal-1. vvvvvvvv COntent of kamal-1.  COntent of kamal-1.            
+    </p>
+    <p> COntent of kamal-1.  COntent of kamal-1.  COntent of kamal-1.  COntent of kamal-1.  COntent of kamal-1.  COntent of kamal-1.  COntent of kamal-1.  COntent of kamal-1.  COntent of kamal-1.  COntent of kamal-1.  COntent of kamal-1.  COntent of kamal-1.  COntent of kamal-1.  COntent of kamal-1.  COntent of kamal-1.  COntent of kamal-1.  COntent of kamal-1.  COntent of kamal-1.  COntent of kamal-1.  COntent of kamal-1. 
+    </p>`},
+    'kamal-3':{
+    title:'kamal-3 | Kamal Hot',
+    heading : 'Article one',
+    date: 'Aug 20,2017',
+    content:`            
+    <p> COntent of kamal-3. COntent of kamal-1.  COntent of kamal-1.  COntent of kamal-1.  COntent of kamal-1.  COntent of kamal-1.  COntent of kamal-1.  COntent of kamal-1.  COntent of kamal-1.  COntent of kamal-1.  COntent of kamal-1.  COntent of kamal-1.  COntent of kamal-1.  COntent of kamal-1.  COntent of kamal-1. vvvvvvvv COntent of kamal-1.  COntent of kamal-1.            
+    </p>
+    <p> COntent of kamal-1.  COntent of kamal-1.  COntent of kamal-1.  COntent of kamal-1.  COntent of kamal-1.  COntent of kamal-1.  COntent of kamal-1.  COntent of kamal-1.  COntent of kamal-1.  COntent of kamal-1.  COntent of kamal-1.  COntent of kamal-1.  COntent of kamal-1.  COntent of kamal-1.  COntent of kamal-1.  COntent of kamal-1.  COntent of kamal-1.  COntent of kamal-1.  COntent of kamal-1.  COntent of kamal-1. 
+    </p>`}
 };
 function createTemplate(data)
 {
@@ -48,8 +67,9 @@ return HTMLTemplate;
 }
 
 
-app.get('/kamal-1', function (req, res) {
-  res.send(createTemplate(content1));
+app.get('/:contentname', function (req, res) {
+    var contentname=req.params.contentname;
+    res.send(createTemplate(contents[contentname]));
 });
 
 app.get('/kamal-2', function (req, res) {
