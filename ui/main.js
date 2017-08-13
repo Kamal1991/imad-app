@@ -1,3 +1,3 @@
 console.log('Loaded!');
-var element=document.getelementbyId('main-text');
+var element=document.getElementById('main-text');
 element.innerHTML="NEW COURSE";
