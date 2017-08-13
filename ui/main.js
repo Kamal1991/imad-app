@@ -20,7 +20,7 @@ submit.onclick=function(){
     var names=['name5','name4','name3','name2','name1'];
     var list='';
     for(var i=0;i<names.length;i++){
-        list+='<li>'+names[i]+'<li>';
+        list+='<li>'+names[i]+'</li>';
         }
         var ul=document.getElementById('namelist');
         ul.innerHTML=list;
