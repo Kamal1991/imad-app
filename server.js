@@ -99,9 +99,19 @@ app.get('/submit-name', function (req, res) {
     res.send(JSON.stringify(names));
 });
 
-app.get('/:contentname', function (req, res) {
+app.get('/articles/:contentname', function (req, res) {
     var contentname=req.params.contentname;
-    res.send(createTemplate(contents[contentname]));
+    pool.query("select * from article where title="+req.params.contentname,function(err,result){
+        if(err){
+            res.status(500).send(err.toString());
+        }else{
+            if(result.row.length===0){
+                res.status(404).send('Article Not Found');
+            }else{
+            var articleData=result.rows[0];
+            res.send(createTemplate(articleData));
+        }}
+    });
 });
 
 
