@@ -1,9 +1,30 @@
 var express = require('express');
 var morgan = require('morgan');
-var path = require('path');
-
 var app = express();
 app.use(morgan('combined'));
+
+var path = require('path');
+var pool = require('pg').Pool;
+var config={
+    user:'kamalhotwani3',
+    database:'kamalhotwani3',
+    host:'db.imad.hasura-app.io',
+    port: '5432',
+    password : 'db-kamalhotwani3-62089'
+};
+var pool=new Pool(config);
+app.get('/test-db', function (req, res) {
+    pool.query('Select * from Test',function(err,result){
+        if(err){
+            res.status(500).send(err.toString());
+        }else{
+            res.send(JSON.stringify(result));
+        }
+        
+    });
+});
+
+
 var contents={
     'kamal-1':{
     title:'kamal-1 | Kamal Hot',
