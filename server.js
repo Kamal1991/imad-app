@@ -14,36 +14,6 @@ var config={
 var app = express();
 app.use(morgan('combined'));
 
-var contents={
-    'kamal-1':{
-    title:'kamal-1 | Kamal Hot',
-    heading : 'Article one',
-    date: 'Aug 12,2017',
-    content:`            
-    <p> COntent of kamal-1. COntent of kamal-1.  COntent of kamal-1.  COntent of kamal-1.  COntent of kamal-1.  COntent of kamal-1.  COntent of kamal-1.  COntent of kamal-1.  COntent of kamal-1.  COntent of kamal-1.  COntent of kamal-1.  COntent of kamal-1.  COntent of kamal-1.  COntent of kamal-1.  COntent of kamal-1. vvvvvvvv COntent of kamal-1.  COntent of kamal-1.            
-    </p>
-    <p> COntent of kamal-1.  COntent of kamal-1.  COntent of kamal-1.  COntent of kamal-1.  COntent of kamal-1.  COntent of kamal-1.  COntent of kamal-1.  COntent of kamal-1.  COntent of kamal-1.  COntent of kamal-1.  COntent of kamal-1.  COntent of kamal-1.  COntent of kamal-1.  COntent of kamal-1.  COntent of kamal-1.  COntent of kamal-1.  COntent of kamal-1.  COntent of kamal-1.  COntent of kamal-1.  COntent of kamal-1. 
-    </p>`
-},
-    'kamal-2':{
-    title:'kamal-2 | Kamal Hot',
-    heading : 'Article one',
-    date: 'Aug 15,2017',
-    content:`            
-    <p> COntent of kamal-2. COntent of kamal-1.  COntent of kamal-1.  COntent of kamal-1.  COntent of kamal-1.  COntent of kamal-1.  COntent of kamal-1.  COntent of kamal-1.  COntent of kamal-1.  COntent of kamal-1.  COntent of kamal-1.  COntent of kamal-1.  COntent of kamal-1.  COntent of kamal-1.  COntent of kamal-1. vvvvvvvv COntent of kamal-1.  COntent of kamal-1.            
-    </p>
-    <p> COntent of kamal-1.  COntent of kamal-1.  COntent of kamal-1.  COntent of kamal-1.  COntent of kamal-1.  COntent of kamal-1.  COntent of kamal-1.  COntent of kamal-1.  COntent of kamal-1.  COntent of kamal-1.  COntent of kamal-1.  COntent of kamal-1.  COntent of kamal-1.  COntent of kamal-1.  COntent of kamal-1.  COntent of kamal-1.  COntent of kamal-1.  COntent of kamal-1.  COntent of kamal-1.  COntent of kamal-1. 
-    </p>`},
-    'kamal-3':{
-    title:'kamal-3 | Kamal Hot',
-    heading : 'Article one',
-    date: 'Aug 20,2017',
-    content:`            
-    <p> COntent of kamal-3. COntent of kamal-1.  COntent of kamal-1.  COntent of kamal-1.  COntent of kamal-1.  COntent of kamal-1.  COntent of kamal-1.  COntent of kamal-1.  COntent of kamal-1.  COntent of kamal-1.  COntent of kamal-1.  COntent of kamal-1.  COntent of kamal-1.  COntent of kamal-1.  COntent of kamal-1. vvvvvvvv COntent of kamal-1.  COntent of kamal-1.            
-    </p>
-    <p> COntent of kamal-1.  COntent of kamal-1.  COntent of kamal-1.  COntent of kamal-1.  COntent of kamal-1.  COntent of kamal-1.  COntent of kamal-1.  COntent of kamal-1.  COntent of kamal-1.  COntent of kamal-1.  COntent of kamal-1.  COntent of kamal-1.  COntent of kamal-1.  COntent of kamal-1.  COntent of kamal-1.  COntent of kamal-1.  COntent of kamal-1.  COntent of kamal-1.  COntent of kamal-1.  COntent of kamal-1. 
-    </p>`}
-};
 function createTemplate(data)
 {
 var title=data.title;
