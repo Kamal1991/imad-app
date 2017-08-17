@@ -1,6 +1,6 @@
 var express = require('express');
 var morgan = require('morgan');
-var pool = require('pg').Pool;
+var Pool = require('pg').Pool;
 
 var path = require('path');
 var config={
