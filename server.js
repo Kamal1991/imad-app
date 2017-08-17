@@ -64,7 +64,7 @@ var HTMLTemplate=
         <div><a href='/'>Home</a></div>
         <hr/>
         <div >
-            ${date}
+            ${date.toDateString()}
         </div>
         <div>
  ${content}
