@@ -1,8 +1,9 @@
 var express = require('express');
 var morgan = require('morgan');
 var Pool = require('pg').Pool;
-
+var crypto = require('crypto');
 var path = require('path');
+
 var config={
     user:'kamalhotwani3',
     database:'kamalhotwani3',
@@ -46,7 +47,6 @@ var HTMLTemplate=
 return HTMLTemplate;
 }
 
-
 var pool=new Pool(config); 
 app.get('/test-db', function (req, res) {
     pool.query('Select * from Test',function(err,result){
@@ -86,7 +86,16 @@ app.get('/articles/:contentname', function (req, res) {
     });
 });
 
+function hash(input,salt){
+    var hashed=crypto.pbkdf2Sync(input,salt,10000,512,'sha512');
+    return hashed.toString('hex');
+}
 
+
+app.get('/hash/:input', function (req, res) {
+  var hashString=hash(req.params.input,'random-string');
+  res.send(hashString);
+});
 
 app.get('/', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'index.html'));
